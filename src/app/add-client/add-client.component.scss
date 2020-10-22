@@ -1,0 +1,85 @@
+form {
+    margin-top: 36px;
+}
+
+.custom_select {
+    border: 1px solid #E4E6EF;
+    border-radius: 8px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+
+    mat-icon {
+        margin-right: 16px;
+    }
+}
+
+.add-photo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    label {
+        margin-left: 16px;
+        cursor: pointer;
+    }
+}
+
+.image-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.stepper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 32px;
+}
+
+.stepper::before {
+    content: ' ';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    border: 1px solid #797D90;
+    width: 80px;
+}
+
+.step {
+    position: relative;
+    padding-left: 20px;
+    margin-right: 16px;
+    height: 24px;
+    min-width: 60px;
+}
+
+.step::before {
+    content: ' ';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 5px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.--active {
+    background: #F4F5FA;
+}
+
+.--active::before {
+    background-image: url('/assets/icon/step-active.png');
+}
+
+.--inactive::before {
+    background-image: url('/assets/icon/step-inactive.png');
+}
+
+.--done::before {
+    background-image: url('/assets/icon/step-check.png'), url('/assets/icon/step-active.png');
+}

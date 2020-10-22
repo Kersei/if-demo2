@@ -1,0 +1,11 @@
+<div class="picker-container">
+    <button class="arrow-button" (click)="changeDate(-1)">
+        <mat-icon setFont="material-icons-round">chevron_left</mat-icon>
+    </button>
+    <input class="picker text" matInput [style.width.ch]="text.length" [matDatepicker]="picker" (click)="picker.open()" readonly="readonly"
+        [(ngModel)]="today">
+    <mat-datepicker #picker></mat-datepicker>
+    <button class="arrow-button" (click)="changeDate(1)">
+        <mat-icon setFont="material-icons-round">chevron_right</mat-icon>
+    </button>
+</div>

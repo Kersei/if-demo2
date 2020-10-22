@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fixed-container {
+    position: sticky;
+    top: 0;
+    background: #F4F5FA;
+    z-index: 2;
+    padding: 56px 64px 24px 64px;
+}
+
+.reminder {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 0px 4px;
+    width: 16px;
+    height: 16px;
+    background: #F47180;
+}
+
+.reminder-active {
+    background: #F14156;
+}
+
+.filters {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.search_filter {
+    display: flex;
+}
+
+.clients {
+    padding: 0 64px;
+}

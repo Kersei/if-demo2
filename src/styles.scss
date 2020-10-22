@@ -1,0 +1,472 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Maven Pro', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+h1 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 34px;
+    line-height: 40px;
+    color: #292F4D;
+}
+
+h2 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 32px;
+    color: #292F4D;
+}
+
+h3 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #292F4D;
+}
+
+h4 {
+    color: #292F4D;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #292F4D;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.caption {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #292F4D;
+    text-transform: uppercase;
+}
+
+.sidenav-content {
+    background: #F4F5FA;
+    width: 100%;
+    z-index: 0;
+}
+
+.content {
+    padding: 56px 64px;
+    height: 100vh;
+    overflow: auto;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.main-button,
+.terciary-button {
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    cursor: pointer;
+
+    mat-icon {
+        font-size: 18px;
+        height: auto;
+    }
+
+}
+
+.icon_before {
+    margin-right: 4px;
+}
+
+.icon_after {
+    margin-left: 4px;
+}
+
+.main-button {
+    background: #F14156;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+.terciary-button {
+    background: #F6F8FF;
+    border-radius: 4px;
+    color: #5678F2;
+}
+
+.main-button:hover {
+    background: #D3394B;
+}
+
+.terciary-button:not(:disabled):hover {
+    background: #5678F2;
+    color: #ffffff;
+}
+
+.terciary-button:disabled {
+    color: #A0ACF0;
+}
+
+.card {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 1px rgba(41, 47, 77, 0.16), 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-control {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+
+    input:not([type=checkbox]),
+    select,
+    textarea {
+        margin-top: 4px;
+        display: block;
+        height: 40px;
+        width: 100%;
+        border: 1px solid #E4E6EF;
+        border-radius: 4px;
+        background: #ffffff;
+        padding: 8px 16px;
+        color: #797D90;
+    }
+
+    textarea {
+        resize: none;
+        height: 128px;
+    }
+
+    select {
+        appearance: none;
+        background-image: url('/assets/icon/arrow.png');
+        background-position: center right 8px;
+        background-repeat: no-repeat;
+    }
+
+    input::placeholder {
+        opacity: 0;
+    }
+
+    input:hover::placeholder {
+        opacity: 1;
+    }
+
+    input:not([type=checkbox]):not(:disabled):hover,
+    select:not(:disabled):hover,
+    textarea:not(:disabled):hover,
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border: 1px solid #797D90;
+        font-weight: 500;
+        color: #292F4D;
+    }
+
+    mat-datepicker,
+    mat-datepicker-toggle {
+        position: absolute;
+        top: calc(50% - 8px);
+        right: 0;
+    }
+}
+
+.form-control:last-of-type {
+    margin-bottom: 0;
+}
+
+.form-checkbox {
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.tabs {
+    margin-top: 8px;
+    box-sizing: border-box;
+    display: flex;
+    border-bottom: 2px solid #E4E6EF;
+    height: 48px;
+}
+
+.secondary {
+    padding-left: 40px;
+}
+
+.tab {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #292F4D;
+    line-height: 24px;
+    margin-bottom: -2px;
+    cursor: pointer;
+}
+
+.tab:hover,
+.active {
+    font-weight: 500;
+}
+
+.tab:hover:not(.active) {
+    border-bottom: 2px solid rgba(#F47180, 0.5);
+}
+
+.active {
+    border-bottom: 2px solid #F14156;
+}
+
+.secondary>.tab:hover:not(.active) {
+    border-bottom: 2px solid rgba(#5678F2, 0.5);
+}
+
+.secondary>.active {
+    border-bottom: 2px solid #5678F2;
+}
+
+.goal-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.goal-bar {
+    width: 304px;
+    height: 8px;
+    background: #F4F5FA;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.goal-progress {
+    height: 8px;
+    background: #F14156;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    width: 50%;
+}
+
+.goal-percentage {
+    color: #F14156;
+}
+
+.no-percentage {
+    color: #E4E6EF;
+}
+
+.activities-list {
+    padding: 0;
+    padding-left: 38px;
+    margin-top: 24px;
+    list-style: none;
+    position: relative;
+}
+
+.activities-list::before {
+    position: absolute;
+    content: ' ';
+    width: 2px;
+    height: 100%;
+    background-color: #E4E6EF;
+    left: 5px;
+    top: 6px;
+}
+
+.activity {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.activity::before {
+    position: absolute;
+    content: ' ';
+    width: 12px;
+    height: 12px;
+    background: url('/assets/icon/inactive.svg') no-repeat;
+    left: -38px;
+    top: 6px;
+}
+
+.next {
+    h4 {
+        color: #5678F2;
+    }
+}
+
+.next::before {
+    position: absolute;
+    content: ' ';
+    width: 24px;
+    height: 24px;
+    background: url('/assets/icon/active.svg') no-repeat;
+    left: -44px;
+    top: 0;
+}
+
+.more {
+    display: flex;
+    align-items: center;
+    color: #292F4D;
+    margin-left: -6px;
+    cursor: pointer;
+
+    span {
+        //color: #292F4D;
+        margin-left: 12px;
+    }
+
+    mat-icon {
+        width: auto !important;
+        height: auto;
+    }
+}
+
+.activity-header {
+    padding: 24px;
+    border-bottom: 1px solid #E4E6EF;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+
+        h3 {
+            color: #5678F2;
+        }
+    }
+
+    h3 {
+        color: #5678F2;
+    }
+}
+
+.activity-content {
+    padding: 24px;
+    border-bottom: 1px solid #E4E6EF;
+}
+
+.activity-subheader {
+    margin-bottom: 24px;
+}
+
+.activity-separator {
+    border: 1px solid #E4E6EF;
+    margin: 24px 0;
+}
+
+.activity-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    button {
+        margin: 32px 24px;
+    }
+}
+
+.modal-content {
+    padding: 32px;
+    height: 480px;
+    width: 688px;
+    background: #ffffff;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-footer {
+    background: #F4F5FA;
+    //width: 120%;
+    height: 104px;
+    margin: -24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+        margin-right: 48px;
+    }
+}
+
+.modal-footer.right {
+    justify-content: flex-end;
+}
+
+.session-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F4F5FA;
+    width: 100%;
+    height: 100%;
+}
+
+.session-form {
+    background: #ffffff;
+    padding: 72px 72px 56px 72px;
+    box-shadow: 0px 0px 1px rgba(41, 47, 77, 0.16), 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form-control,
+    .main-button {
+        width: 280px;
+    }
+
+    .logo {
+        height: 64px;
+        margin-bottom: 48px;
+    }
+
+    .main-button {
+        margin-top: 32px;
+        justify-content: center;
+    }
+}
+
+.form-title {
+    margin-bottom: 24px;
+    max-width: 280px;
+    text-align: center;
+}

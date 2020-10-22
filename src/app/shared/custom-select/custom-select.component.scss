@@ -1,0 +1,110 @@
+.custom_select {
+    padding: 8px 16px;
+    border: 1px solid #797D90;
+    border-radius: 8px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: none;
+    cursor: pointer;
+
+    mat-icon {
+        margin-left: 16px;
+    }
+}
+
+.disabled {
+    border: 1px solid #E4E6EF;
+
+    span,
+    mat-icon {
+        color: #E4E6EF;
+    }
+}
+
+.custom_select:not(.disabled):hover {
+    background: #E4E6EF;
+}
+
+.options-container {
+    top: 8px;
+    position: relative;
+}
+
+.select_options {
+    position: absolute;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    background: #ffffff;
+    z-index: 9999 !important;
+    min-width: max-content;
+    top: 0;
+}
+
+.options-left {
+    left: 0;
+}
+
+.options-right {
+    right: 0;
+}
+
+.option {
+    padding: 8px;
+    background: #ffffff;
+    display: block;
+    margin: 16px 8px 0 8px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.option:first-child {
+    margin-top: 8px;
+}
+
+.option:last-child {
+    margin-bottom: 8px;
+}
+
+.option::after {
+    position: absolute;
+    content: ' ';
+    border-bottom: 1px solid #E4E6EF;
+    width: 100%;
+    left: 0;
+    bottom: -8px;
+    margin-top: 8px;
+    display: block;
+}
+
+.option::after:last-child {
+    border: none;
+}
+
+.option:hover {
+    background: #F4F5FA;
+    font-weight: 500;
+}
+
+.form-control> :host {
+    .custom_select {
+        margin-top: 4px;
+        height: 40px;
+        width: 100%;
+        border: 1px solid #E4E6EF;
+        border-radius: 4px;
+        background: #ffffff;
+        padding: 8px 16px;
+        color: #797D90;
+        position: relative;
+
+        span {
+            font-weight: 400;
+        }
+    }
+
+    .select_options {
+        width: 100%;
+    }
+}

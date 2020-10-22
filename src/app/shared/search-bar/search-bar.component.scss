@@ -1,0 +1,41 @@
+.search-compressed,
+.search-container {
+    background: #ffffff;
+    height: 40px;
+    display: flex;
+    border: 1px solid #E4E6EF;
+    margin-right: 16px;
+    transition: width .35s ease-in;
+    cursor: pointer;
+}
+
+.search-compressed {
+    width: 40px;
+    border-radius: 30px;
+    color: #797D90;
+
+    mat-icon {
+        margin: auto;
+    }
+}
+
+.search-container {
+    width: 264px;
+    border-radius: 8px;
+    color: #292F4D;
+
+    mat-icon {
+        margin: auto 12px;
+    }
+}
+
+.search-input {
+    background: none;
+    border: none;
+    width: 100%;
+}
+
+::placeholder {
+    color: #E4E6EF;
+    opacity: 1;
+}

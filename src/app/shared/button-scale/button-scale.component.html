@@ -1,0 +1,10 @@
+<div class="btn-scale">
+    <span class="caption">{{minText}}</span>
+    <div class="dots">
+        <div class="dot" *ngFor="let dot of dots; let i = index;">
+            <div class="css-icon" (click)="select(i)" [ngClass]="{'icon-active': dot.active}"></div>
+            <span class="text">{{dot.value}}</span>
+        </div>
+    </div>
+    <span class="caption">{{maxText}}</span>
+</div>

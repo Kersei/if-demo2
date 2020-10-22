@@ -1,0 +1,73 @@
+<div mat-dialog-content class="modal-content">
+    <div class="modal-header">
+        <h3>Agregar nuevo cliente</h3>
+        <button mat-icon-button [mat-dialog-close]="true">
+            <mat-icon fontSet="material-icons-round" class="close-icon">close</mat-icon>
+        </button>
+    </div>
+    <ng-container [ngSwitch]="currentStep">
+        <form name="newClient" *ngSwitchCase="0">
+            <mat-grid-list cols="2" rowHeight="84px" gutterSize="32px">
+                <mat-grid-tile>
+                    <div class="form-control">
+                        <label class="text">Nombre*</label>
+                        <input class="text" type="text" name="name" placeholder="Requerido*">
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="form-control">
+                        <label class="text">Apellido</label>
+                        <input class="text" type="text" name="lastName" placeholder="Requerido*">
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="form-control">
+                        <label class="text">Correo electrónico*</label>
+                        <input class="text" type="email" name="email" placeholder="Requerido*">
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="form-control">
+                        <label class="text">Teléfono*</label>
+                        <input class="text" type="tel" name="phone" placeholder="Requerido*">
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="form-control">
+                        <label class="text">Seleccionar membresía/programa*</label>
+                        <select></select>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="add-photo">
+                        <img src="/assets/img/avatar.png">
+                        <input type="file" class="image-file" id="file">
+                        <label for="file" class="text">Agregar foto del cliente</label>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+        <form name="additional-data" *ngSwitchCase="1">
+            <div class="form-control">
+                <label class="text">Mensaje personalizado que se incluirá en el Cuestionario inicial</label>
+                <textarea></textarea>
+            </div>
+            <div class="form-control">
+                <label class="text">Mensaje que se incluirá junto al Quick-Start Guide, una vez completado el
+                    cuestionario inicial</label>
+                <textarea></textarea>
+            </div>
+        </form>
+    </ng-container>
+</div>
+<div mat-dialog-actions class="modal-footer">
+    <div class="stepper">
+        <div class="step caption" *ngFor="let step of steps; let i = index"
+            [ngClass]="{'--inactive': currentStep < i, '--active': currentStep == i, '--done': currentStep > i }"
+            (click)="goToStep(i)">{{ currentStep == i ? step : ''}}</div>
+    </div>
+    <button type="submit" mat-button form="newClient" class="main-button" *ngIf="currentStep == 0"
+        (click)="goToStep(1)">Siguiente</button>
+    <button type="submit" mat-button form="additional-data" class="main-button" *ngIf="currentStep == 1">Enviar
+        Invitación</button>
+</div>

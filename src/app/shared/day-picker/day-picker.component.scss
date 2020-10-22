@@ -1,0 +1,44 @@
+.picker-container {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    //width: fit-content;
+    border-radius: 8px;
+    border: 1px solid #797D90;
+
+    .arrow-button:first-child {
+        border-right: 1px solid #E4E6EF;
+        border-radius: 8px 0 0 8px;
+    }
+
+    .arrow-button:last-child {
+        border-left: 1px solid #E4E6EF;
+        border-radius: 0 8px 8px 0;
+    }
+}
+
+.arrow-button {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.arrow-button:hover {
+    background: #E4E6EF;
+}
+
+.picker {
+    height: 40px;
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    font-weight: 500;
+    //width: min-content;
+}
+
+.picker:hover {
+    background: #F4F5FA;
+}

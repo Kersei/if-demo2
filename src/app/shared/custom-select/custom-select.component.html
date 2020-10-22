@@ -1,0 +1,10 @@
+<div class="custom_select" (click)="toggleSelect()" (blur)="opened=false" tabindex="0"
+    [ngClass]="{'disabled': disabled}">
+    <span class="text medium">{{!!selected ? selected.text : options[0].text}}</span>
+    <mat-icon fontSet="material-icons-round">{{type == 'select' ? 'expand_more' : 'swap_vert'}}</mat-icon>
+</div>
+<div class="options-container" *ngIf="opened">
+    <div class="select_options" [ngClass]="type=='order' ? 'options-right' : 'options-left'">
+        <span class="option text" *ngFor="let option of options" (mousedown)="select(option)">{{option.text}}</span>
+    </div>
+</div>

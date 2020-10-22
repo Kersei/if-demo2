@@ -1,0 +1,65 @@
+.options-container {
+    position: relative;
+    width: 100%;
+}
+
+.dots {
+    color: #292F4D;
+    font-size: 24px;
+    height: auto;
+    width: auto;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dots:not(.options-disabled):hover {
+    background-color: #F4F5FA;
+}
+
+.options {
+    position: absolute;
+    top: 32px;
+    right: 0;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    z-index: 1;
+    width: max-content;
+}
+
+.option {
+    background-color: #FFFFFF;
+    display: block;
+    padding: 8px 16px;
+    margin: 16px 8px 8px 8px;
+    border-radius: 4px;
+    position: relative;
+    height: 40px;
+    cursor: pointer;
+}
+
+.option:first-of-type {
+    margin-top: 8px;
+}
+
+.option::after {
+    content: ' ';
+    border: 1px solid #F4F5FA;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -8px;
+}
+
+.option:last-of-type::after {
+    border: none;
+}
+
+.option:hover {
+    background-color: #F4F5FA;
+    font-weight: 500;
+}
+
+.options-disabled {
+    color: #797D90;
+}

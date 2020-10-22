@@ -1,0 +1,31 @@
+<div class="activity-container" (mouseenter)="mouseIn()" (mouseleave)="mouseOut()"
+    [ngClass]="{'hidden': membershipHidden}">
+    <div class="activity-notch" [ngClass]="{'call': type == 'call', 'make': type == 'make', 'send': type == 'send', 
+        'load': type == 'load', 'done': done, 'membership': type == 'membership'}">
+    </div>
+    <ng-container *ngIf="type != 'membership'">
+        <div class="activity-time text medium" *ngIf="type == 'call' && !done; else check">10:30</div>
+        <ng-template #check>
+            <div class="activity-check">
+                <app-custom-checkbox [checked]="done" [done]="done" [disabled]="done" (change)="checkToggle($event)">
+                </app-custom-checkbox>
+            </div>
+        </ng-template>
+    </ng-container>
+    <h4 class="activity-name" [ngClass]="{'done': done, 'add-margin': type == 'membership'}">Llamada de seguimiento</h4>
+    <div class="text client-name" *ngIf="type != 'membership'" [ngClass]="{'done': done}">Ana María Gonzalez</div>
+    <ng-container *ngIf="type == 'membership'">
+        <div class="text price">$800</div>
+        <div class="text visibility">{{membershipHidden ? 'Oculto' : 'Visible'}}</div>
+        <div class="text client-amount">{{membershipHidden ? '-' : '4'}} Clientes</div>
+    </ng-container>
+    <div class="activity-options">
+        <button class="terciary-button" [hidden]="!showButton" *ngIf="type != 'membership' && !done">
+            <mat-icon setFont="material-icons-round" class="icon_before" *ngIf="type != 'call'"
+                (click)="buttonClicked()">check</mat-icon>
+            {{type == 'call' ? 'Iniciar Actividad' : 'Marcar como completada'}}
+        </button>
+        <app-options-dots class="dots" (selection)="optionSelected($event)" [options]="options" [disabled]="done" [color]="color">
+        </app-options-dots>
+    </div>
+</div>

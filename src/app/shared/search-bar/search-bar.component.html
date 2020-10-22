@@ -1,0 +1,4 @@
+<div [ngClass]="opened ? 'search-container' : 'search-compressed'" (click)="handleInput()">
+    <mat-icon fontSet="material-icons-round">search</mat-icon>
+    <input *ngIf="opened" type="search" name="search" class="text medium search-input" placeholder="Buscar" (blur)="opened = false" appFocusOnShow>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="sidenav" [ngClass]="{'expanded': expanded}">
+        <img [src]="expanded ? '/assets/img/Logotype B.svg' : '/assets/img/Logotype D.svg'" class="logo">
+        <ul class="menu-options">
+            <li class="menu-option" [ngClass]="{'--selected': selected == 'clients'}" (click)="selected = 'clients'" routerLink="/clientes">
+                <mat-icon fontSet="material-icons-round">people_outline</mat-icon>
+                <span *ngIf="expanded" class="text medium">Clientes</span>
+            </li>
+            <hr class="menu-separator">
+            <li class="menu-option" [ngClass]="{'--selected': selected == 'activities'}" (click)="selected = 'activities'" routerLink="/actividades">
+                <mat-icon fontSet="material-icons-round">content_paste</mat-icon>
+                <span *ngIf="expanded" class="text medium">Actividades</span>
+            </li>
+            <hr class="menu-separator">
+            <li class="menu-option" [ngClass]="{'--selected': selected == 'memberships'}" (click)="selected = 'memberships'" routerLink="/membresias">
+                <mat-icon fontSet="material-icons-round">event_available</mat-icon>
+                <span *ngIf="expanded" class="text medium">Membresias</span>
+            </li>
+        </ul>
+        <div class="img-container" routerLink="/perfil">
+            <img class="profile" src="/assets/img/profile.jpg">
+            <span *ngIf="expanded" class="text">{{name}}</span>
+        </div>
+        <div class="expand" (click)="expanded = !expanded">
+            <mat-icon fontSet="material-icons-round">{{expanded ? 'chevron_left' : 'chevron_right'}}</mat-icon>
+        </div>
+    </div>
+    <div class="sidenav-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

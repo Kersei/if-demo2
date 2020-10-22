@@ -1,0 +1,55 @@
+.descriptive {
+    color: #797D90;
+}
+
+.photos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.measure {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span,
+    .form-control {
+        width: 50%;
+    }
+}
+
+.training-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkgroup {
+    display: flex;
+    align-items: center;
+
+    .form-checkbox {
+        margin-right: 40px;
+
+        label {
+            margin-right: 8px;
+        }
+
+        input {
+            border: 1px solid #292F4D;
+        }
+    }
+
+    .form-checkbox:last-of-type {
+        margin-right: 0;
+
+        input {
+            margin-right: 0;
+        }
+    }
+}
+
+.after-dots {
+    margin-top: 24px;
+}

@@ -1,0 +1,112 @@
+<div class="client">
+    <div class="client-header">
+        <div class="client-data" routerLink="/cliente">
+            <img [ngClass]="type == 'invited' ? 'no-photo' : 'client-profile'"
+                [src]="type=='invited' ? '/assets/img/avatar-clock.png' : '/assets/img/profile.jpg'">
+            <span *ngIf="type != 'invited'" class="pic-reminder"></span>
+            <div class="client-info">
+                <h4>Ana María González</h4>
+                <p class="header-subtitle text">ana.maria.gonzalez@hotmail.com</p>
+            </div>
+            <div class="program-info">
+                <h4>{{type == 'invited' ? 'Invitación Enviada' : 'Programa'}}</h4>
+                <p class="header-subtitle text">
+                    {{type == 'invited' ? '26 de Noviembre, 18:30 h' : 'nombre del programa'}}</p>
+            </div>
+        </div>
+        <div class="actions">
+            <ng-container *ngIf="type == 'invited'; else has_program">
+                <button class="terciary-button">
+                    Reenviar invitación
+                </button>
+            </ng-container>
+            <ng-template #has_program>
+                <div *ngIf="!expanded">
+                    <h4>{{type == 'active' ? 'Próxima Actividad' : 'Última Actividad'}}</h4>
+                    <p class="header-subtitle text">26 de Noviembre, 18:30 h</p>
+                </div>
+                <div class="goal" *ngIf="!expanded">
+                    <div class="goal-title">
+                        <h4>Meta</h4>
+                        <span class="caption goal-percentage">50%</span>
+                    </div>
+                    <div class="goal-bar">
+                        <div class="goal-progress"></div>
+                    </div>
+                </div>
+                <button class="terciary-button" *ngIf="expanded">
+                    <mat-icon fontSet="material-icons-round" class="icon_before" *ngIf="type == 'active'">add</mat-icon>
+                    {{type == 'active' ? 'Agregar Actividad' : 'Reactivar'}}
+                </button>
+                <div class="icons">
+                    <app-options-dots [options]="moreOptions" [vertical]="false"></app-options-dots>
+                    <mat-icon class="client-expand" fontSet="material-icons-round" (click)="expanded = !expanded">
+                        {{expanded ? 'expand_less' : 'expand_more'}}
+                    </mat-icon>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+    <div class="client-content" *ngIf="expanded">
+        <div class="client-column">
+            <h3 class="medium">Actividades</h3>
+            <ul class="activities-list">
+                <li class="activity" [ngClass]="{'next': type == 'active'}">
+                    <h4 class="activity-title">Próxima: Llamada inicial</h4>
+                    <span class="header-subtitle text">26 de Noviembre, 18:30 h</span>
+                </li>
+                <li class="activity">
+                    <h4 class="activity-title">Próxima: Llamada inicial</h4>
+                    <span class="header-subtitle text">26 de Noviembre, 18:30 h</span>
+                </li>
+                <li class="activity">
+                    <h4 class="activity-title">Próxima: Llamada inicial</h4>
+                    <span class="header-subtitle text">26 de Noviembre, 18:30 h</span>
+                </li>
+            </ul>
+            <div class="more">
+                <mat-icon setFont="material-icons-round">add</mat-icon>
+                <span class="caption">ver más actividades</span>
+            </div>
+        </div>
+        <div class="client-column">
+            <h3 class="medium">Metas</h3>
+            <div class="client-goals">
+                <div class="goal">
+                    <div class="goal-title">
+                        <h4 class="goal-type">Meta</h4>
+                        <span class="caption goal-percentage">50%</span>
+                    </div>
+                    <div class="goal-bar">
+                        <div class="goal-progress"></div>
+                    </div>
+                </div>
+                <div class="goal">
+                    <div class="goal-title">
+                        <h4 class="goal-type">Milestone</h4>
+                        <span class="caption goal-percentage">50%</span>
+                    </div>
+                    <div class="goal-bar">
+                        <div class="goal-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="client-column">
+            <h3 class="medium">{{type == 'inactive' ? 'Razón de la inactividad' : 'Notas Destacadas'}}</h3>
+            <span class="detail text" *ngIf="type == 'inactive'; else list">Final del tratamiento exitoso</span>
+            <ng-template #list>
+                <ul class="details-list">
+                    <li class="detail">
+                        <mat-icon fontSet="material-icons-round">warning</mat-icon>
+                        <span class="text">Alergia a los frutos secos</span>
+                    </li>
+                    <li class="detail">
+                        <span class="emoji">👶</span>
+                        <span class="text">Tuvo su bebé</span>
+                    </li>
+                </ul>
+            </ng-template>
+        </div>
+    </div>
+</div>

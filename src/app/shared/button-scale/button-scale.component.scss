@@ -1,0 +1,55 @@
+.btn-scale,
+.dots {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    justify-content: space-between;
+}
+
+.dots {
+    width: 100%;
+    position: relative;
+    margin: 0 24px;
+    z-index: 0;
+}
+
+.dots::before {
+    position: absolute;
+    content: ' ';
+    width: 99%;
+    height: 1px;
+    background-color: #E4E6EF;
+    left: 0.5%;
+    top: 35px;
+    z-index: -1;
+}
+
+.dot {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.css-icon {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    z-index: 1;
+    margin-bottom: 2px;
+    background-image: url('/assets/icon/dot.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.css-icon:not(.icon-active):hover {
+    background-image: url('/assets/icon/inactive.svg');
+}
+
+.icon-active {
+    background-image: url('/assets/icon/dot-active.svg');
+}
+
+.caption {
+    color: #797D90;
+}

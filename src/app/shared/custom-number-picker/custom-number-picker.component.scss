@@ -1,0 +1,38 @@
+.number-picker-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.number-picker::-webkit-inner-spin-button,
+.number-picker::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+.number-up,
+.number-down {
+    position: absolute;
+    right: 8px;
+    cursor: pointer;
+    height: auto;
+    width: auto;
+    font-size: 16px;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.number-up {
+    top: 4px;
+}
+
+.number-down {
+    top: 20px;
+}
+
+.disabled {
+
+    .number-up,
+    .number-down {
+        color: #797D90;
+    }
+}

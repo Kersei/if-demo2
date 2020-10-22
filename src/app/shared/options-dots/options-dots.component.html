@@ -1,0 +1,7 @@
+<div class="options-container" (blur)="showOptions = false" tabindex="0">
+    <mat-icon class="dots" [ngStyle]="{'color': disabled ? '' : color}" [ngClass]="{'options-disabled': disabled}"
+        fontSet="material-icons-round" (click)="toggleOptions()">{{vertical ? 'more_vert' : 'more_horiz'}}</mat-icon>
+    <ul class="options" *ngIf="showOptions">
+        <li class="option text" *ngFor="let option of options" (click)="select(option.value)">{{option.text}}</li>
+    </ul>
+</div>

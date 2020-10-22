@@ -1,0 +1,118 @@
+.client {
+    margin-bottom: 24px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 1px rgba(41, 47, 77, 0.16), 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.client-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E4E6EF;
+    padding: 24px;
+}
+
+.client-data {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.no-photo,
+.client-profile {
+    height: 48px;
+    width: 48px;
+    margin-right: 40px;
+}
+
+.client-profile {
+    border-radius: 24px;
+}
+
+.pic-reminder {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    background: #F14156;
+    border-radius: 6px;
+    top: -18px;
+    left: -52px;
+}
+
+.client-info {
+    margin-right: 40px;
+}
+
+.header-subtitle {
+    color: #797D90;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+
+    .goal {
+        margin-left: 98px;
+    }
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.client-expand {
+    margin-left: 24px;
+    color: #292F4D;
+    cursor: pointer;
+}
+
+.client-content {
+    display: flex;
+    padding: 64px 112px;
+    justify-content: space-between;
+}
+
+.client-column {
+    flex-basis: 304px;
+}
+
+.client-goals {
+    margin-top: 24px;
+}
+
+.goal:first-of-type {
+    margin-bottom: 32px;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+}
+
+.detail {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    mat-icon,
+    .emoji {
+        margin-right: 12px;
+    }
+}
+
+.detail::after {
+    content: ' ';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    border: 1px solid #E4E6EF;
+}
+
+.detail:last-of-type::after {
+    border: none;
+}

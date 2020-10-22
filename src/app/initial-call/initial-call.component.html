@@ -1,0 +1,94 @@
+<div class="activity-header">
+    <span class="text descriptive">26 de Noviembre, 18:30 h (15
+        minutos)</span>
+    <div class="follow-up-container">
+        <h3>Llamada inicial</h3>
+        <app-options-dots [options]="options"></app-options-dots>
+        <!--span class="text descriptive right-notch" (mouseover)="showFollowUp=true">¿No lograste
+            contactar a tu
+            cliente?</span>
+        <div class="follow-up" [ngClass]="{'follow-up-show': showFollowUp}" (mouseleave)="showFollowUp=false">
+            <button class="terciary-button">
+                <mat-icon fontSet="material-icons-round" class="icon_before">send</mat-icon>
+                Envíar Follow up
+            </button>
+        </div-->
+    </div>
+</div>
+<div class="activity-content">
+    <div class="form-control">
+        <label class="text">Comentario Lifestyle</label>
+        <textarea></textarea>
+    </div>
+    <div class="form-control">
+        <label class="text">Comentario Dieta</label>
+        <textarea></textarea>
+    </div>
+    <div class="form-control">
+        <label class="text">Comentario Entrenamiento</label>
+        <textarea></textarea>
+    </div>
+    <div class="form-control">
+        <label class="text">Comentario Suplementos</label>
+        <textarea></textarea>
+    </div>
+    <h3 class="activity-subheader">Meta</h3>
+    <div class="form-control">
+        <app-custom-select type="select"></app-custom-select>
+    </div>
+    <mat-grid-list cols="2" rowHeight="84px" gutterSize="32px">
+        <mat-grid-tile>
+            <div class="form-control">
+                <label class="text">Cantidad</label>
+                <input class="text" type="text" name="name">
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="form-control">
+                <label class="text">Deadline</label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <hr class="activity-separator">
+    <h3 class="activity-subheader">Milestone</h3>
+    <div class="form-control">
+        <app-custom-select type="select"></app-custom-select>
+    </div>
+    <mat-grid-list cols="2" rowHeight="84px" gutterSize="32px">
+        <mat-grid-tile>
+            <div class="form-control">
+                <label class="text">Cantidad</label>
+                <input class="text" type="text" name="name">
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="form-control">
+                <label class="text">Deadline</label>
+                <input matInput [matDatepicker]="milePicker">
+                <mat-datepicker-toggle matSuffix [for]="milePicker"></mat-datepicker-toggle>
+                <mat-datepicker #milePicker></mat-datepicker>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <hr class="activity-separator">
+    <hr class="activity-separator">
+    <p class="text activity-subheader">¿Qué tan segura estás de poder llevar a cabo un plan con estas
+        características?</p>
+    <app-button-scale></app-button-scale>
+    <div class="form-control after-dots">
+        <label class="text">Notas Adicionales</label>
+        <textarea></textarea>
+    </div>
+    <div class="form-checkbox">
+        <app-custom-checkbox></app-custom-checkbox>
+        <label class="text">Recordar en la próxima llamada</label>
+    </div>
+</div>
+<div class="activity-footer">
+    <button class="terciary-button">
+        Terminar Actividad
+    </button>
+</div>

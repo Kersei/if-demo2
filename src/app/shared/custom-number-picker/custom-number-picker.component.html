@@ -1,0 +1,6 @@
+<div class="number-picker-container" [ngClass]="{'disabled': disabled}">
+    <input #number type="number" [value]="value" [min]="min" [max]="max" [step]="step" [placeholder]="placeholder"
+        [disabled]="disabled" class="number-picker">
+    <mat-icon setFont="material-icons-round" class="number-up" (click)="stepUp()">expand_less</mat-icon>
+    <mat-icon setFont="material-icons-round" class="number-down" (click)="stepDown()">expand_more</mat-icon>
+</div>

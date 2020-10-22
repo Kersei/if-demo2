@@ -1,0 +1,452 @@
+<div class="content" (scroll)="checkScroll($event)">
+    <div class="header">
+        <h2>
+            <mat-icon setFont="material-icons-round" [routerLink]="'/clientes'">arrow_back</mat-icon>Ana Maria
+            González
+        </h2>
+        <button class="main-button" (click)="activityOpened = !activityOpened">
+            <mat-icon fontSet="material-icons-round" class="icon_before">add</mat-icon>
+            <span>Agregar Actividad
+            </span>
+        </button>
+    </div>
+    <div class="sections">
+        <section class="main-data" [ngClass]="{'opened': activityOpened}">
+            <div class="columns-container">
+                <div class="card column">
+                    <span class="text descriptive">Estatura</span>
+                    <h3 class="medium">180 m</h3>
+                    <span class="text descriptive">5.9 f</span>
+                </div>
+                <div class="card column" [ngClass]="{'no-margin': activityOpened}">
+                    <span class="text descriptive">Edad</span>
+                    <h3 class="medium">30 años</h3>
+                    <span class="text descriptive">24 Abr</span>
+                </div>
+                <div class="card column" [ngClass]="{'second-row': activityOpened}">
+                    <span class="text descriptive">Peso</span>
+                    <h3 class="medium">39 kg</h3>
+                    <span class="text stat good">
+                        <mat-icon fontSet="material-icons-round">trending_down</mat-icon> 3.5
+                    </span>
+                </div>
+                <div class="card column" [ngClass]="{'second-row': activityOpened}">
+                    <span class="text descriptive">Grasa Corporal</span>
+                    <h3 class="medium">10 %</h3>
+                    <span class="text stat bad">
+                        <mat-icon fontSet="material-icons-round">trending_up</mat-icon> 3%
+                    </span>
+                </div>
+            </div>
+            <div class="main-info card">
+                <div class="main-header">
+                    <h2>Últimas fotos</h2>
+                    <div class="buttons">
+                        <button class="terciary-button">
+                            <mat-icon fontSet="material-icons-round" class="icon_before">backup</mat-icon>
+                            Subir
+                        </button>
+                        <button class="terciary-button" disabled="disabled">
+                            <mat-icon fontSet="material-icons-round" class="icon_before">history</mat-icon>
+                            Ver anteriores
+                        </button>
+                    </div>
+                </div>
+                <div class="photos">
+                    <div class="photo-container" [hidden]="true">
+                        <img class="client-photo" src="/assets/img/photo dummy.jpg">
+                        <div class="overlay"></div>
+                        <mat-icon fontSet="material-icons-round" class="overlay-icon">zoom_in</mat-icon>
+                    </div>
+                    <div class="photo-container" [hidden]="true">
+                        <img class="client-photo" src="/assets/img/photo dummy.jpg">
+                        <div class="overlay"></div>
+                        <mat-icon fontSet="material-icons-round" class="overlay-icon">zoom_in</mat-icon>
+                    </div>
+                    <div class="photo-container" *ngIf="!activityOpened" [hidden]="true">
+                        <img class="client-photo" src="/assets/img/photo dummy.jpg">
+                        <div class="overlay"></div>
+                        <mat-icon fontSet="material-icons-round" class="overlay-icon">zoom_in</mat-icon>
+                    </div>
+                    <div class="no-photo">
+                        <mat-icon setFont="material-icons-round">image_not_supported</mat-icon>
+                        <span class="text"> No tienes ninguna imagen disponible aún</span>
+                    </div>
+                </div>
+            </div>
+            <div class="main-info card">
+                <div class="main-header">
+                    <h2>Destacados</h2>
+                    <div class="buttons">
+                        <button class="terciary-button">
+                            <mat-icon fontSet="material-icons-round" class="icon_before">history</mat-icon>
+                            Ver anteriores
+                        </button>
+                    </div>
+                </div>
+                <ul>
+                    <li class="text medium highlight">Se divorció en 2018 <mat-icon fontSet="material-icons-round">
+                            more_vert</mat-icon>
+                    </li>
+                    <li class="text medium highlight">Fue bulímica entre 2015 y 2017 <mat-icon
+                            fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="text medium highlight">Sufrió un accidente en 2011 <mat-icon
+                            fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="text medium highlight">Hizo levantamiento de pesas entre 2010 y 2013 <mat-icon
+                            fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-info card">
+                <div class="main-header">
+                    <h2>Mediciones</h2>
+                    <div class="buttons">
+                        <button class="terciary-button">
+                            Semestral
+                            <mat-icon fontSet="material-icons-round" class="icon_after">expand_more</mat-icon>
+                        </button>
+                        <button class="terciary-button">
+                            <mat-icon fontSet="material-icons-round" class="icon_before">history</mat-icon>
+                            Ver anteriores
+                        </button>
+                    </div>
+                </div>
+                <div class="tabs secondary">
+                    <a class="tab active">Peso</a>
+                    <a class="tab">Grasa corporal</a>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas #canvas id="canvas" baseChart [datasets]="lineChartData" [labels]="lineChartLabels"
+                        [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                        [chartType]="lineChartType" [plugins]="lineChartPlugins">
+                    </canvas>
+                    <div class="chart-tooltip"
+                        [ngStyle]="{'opacity': tooltipOpacity, 'top': tooltipTop, 'left': tooltipLeft}">
+                        <div class="chart-stat">
+                            <p class="stat-name">Peso</p>
+                            <p class="text medium main-stat">111 Kg</p>
+                        </div>
+                        <div class="chart-stat">
+                            <p class="stat-name">Objetivo</p>
+                            <p class="text medium secondary-stat">105 Kg</p>
+                        </div>
+                        <div class="chart-stat">
+                            <p class="stat-name">Diferencia</p>
+                            <p class="text medium difference-stat bad">
+                                <mat-icon fontSet="material-icons-round">trending_up</mat-icon>6 Kg
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns-container">
+                <div class="card column">
+                    <div class="goal-title">
+                        <h4>Meta</h4>
+                        <span class="caption goal-percentage">30%</span>
+                    </div>
+                    <div class="goal-bar">
+                        <div class="goal-progress" style="width: 30%;"></div>
+                    </div>
+                    <span class="text descriptive">80kg (30% de la meta cumplida)</span>
+                </div>
+                <div class="card column" *ngIf="false">
+                    <div class="goal-title">
+                        <h4>Milestone</h4>
+                        <span class="caption goal-percentage">50%</span>
+                    </div>
+                    <div class="goal-bar">
+                        <div class="goal-progress"></div>
+                    </div>
+                    <span class="text descriptive">3kg (50% del milestone cumplido)</span>
+                </div>
+                <div class="card column">
+                    <div class="goal-title">
+                        <h4>Milestone</h4>
+                        <span class="caption no-percentage">-%</span>
+                    </div>
+                    <div class="goal-bar">
+                        <div class="goal-progress" style="width: 0%"></div>
+                    </div>
+                    <span class="text descriptive">No se ha cargado ningún milestone aún</span>
+                </div>
+            </div>
+            <div class="main-info card">
+                <div class="main-header">
+                    <h2>Historial Médico</h2>
+                    <div class="buttons">
+                        <button class="terciary-button">
+                            <mat-icon fontSet="material-icons-round" class="icon_before">visibility_off</mat-icon>
+                            Ocultar campos vacíos
+                        </button>
+                    </div>
+                </div>
+                <ul>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Contraindicaciones Médicas</span>
+                            <h4>Pasas de Uvas y Frutos Secos</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Presión Alta/Baja</span>
+                            <h4>—</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Enfermedad Crónica</span>
+                            <h4>Intolerancia a la Lactosa</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Lesiones</span>
+                            <h4>Esguince de tobillo curado hace poco</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Información Adicional</span>
+                            <h4>—</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Condiciones / Desorden Alimenticio</span>
+                            <h4>—</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Medicinas</span>
+                            <h4>Enalapri, (Vasotec®) 20 mg dos veces al día </h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-info card">
+                <div class="main-header">
+                    <h2>Datos Alimenticios</h2>
+                    <div class="buttons">
+                        <button class="terciary-button">
+                            <mat-icon fontSet="material-icons-round" class="icon_before">visibility_off</mat-icon>
+                            Ocultar campos vacíos
+                        </button>
+                    </div>
+                </div>
+                <ul>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Alergias</span>
+                            <h4>Pasas de Uvas y Frutos Secos</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Dieta</span>
+                            <h4>Vegana</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Intolerancias alimenticias</span>
+                            <h4>Intolerancia a la Lactosa</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Restricción Alimentaria</span>
+                            <h4>?</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Alimentos que no consume</span>
+                            <h4>Aguacate, kiwi, sandía, nueces</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Adicional</span>
+                            <h4>—</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Agua diaria</span>
+                            <h4>2 lts</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-info card">
+                <div class="main-header">
+                    <h2>Entrenamiento / Lifestyle</h2>
+                    <div class="buttons">
+                        <button class="terciary-button">
+                            <mat-icon fontSet="material-icons-round" class="icon_before">visibility_off</mat-icon>
+                            Ocultar campos vacíos
+                        </button>
+                    </div>
+                </div>
+                <ul>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Donde entrena</span>
+                            <h4>Casa</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Horario</span>
+                            <h4>9am - 10.20 am</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Días / Duración</span>
+                            <h4>3 veces por semana, 1.30 hs</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Equipo</span>
+                            <h4>—</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                    <li class="highlight">
+                        <div>
+                            <span class="text">Lesiones</span>
+                            <h4>Esguince de tobillo</h4>
+                        </div>
+                        <mat-icon fontSet="material-icons-round">more_vert</mat-icon>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="secondary-data" [ngClass]="{'stay': !showHeader}">
+            <div class="fixed-wrapper" *ngIf="!showHeader">
+                <div class="fixed-info card">
+                    <span class="text medium">Perfil de</span>
+                    <h3>Ana Maria González</h3>
+                </div>
+            </div>
+            <ng-container *ngIf="!activityOpened">
+                <div class="side-info card" [ngClass]="{'extra-margin': !showHeader}">
+                    <div class="side-header">
+                        <span class="text">Datos de Contacto</span>
+                        <mat-icon fontSet="material-icons-round" (click)="contactExpanded = !contactExpanded">
+                            {{contactExpanded ? 'expand_less' : 'expand_more'}}
+                        </mat-icon>
+                    </div>
+                    <div class="side-content" *ngIf="contactExpanded">
+                        <img class="client-profile-pic" src="/assets/img/profile.jpg">
+                        <form>
+                            <div class="form-control">
+                                <label class="text">Nombre</label>
+                                <input class="text" type="text" name="name" placeholder="Requerido*" value="Anastasia">
+                            </div>
+                            <div class="form-control">
+                                <label class="text">Apellido</label>
+                                <input class="text" type="text" name="lastName" placeholder="Requerido*" value="Moreno">
+                            </div>
+                            <div class="form-control">
+                                <label class="text">Correo electrónico</label>
+                                <input class="text" type="email" name="email" placeholder="Requerido*"
+                                    value="ana.moreno@inspiringfitness.com.mx">
+                            </div>
+                            <div class="form-control">
+                                <label class="text">Teléfono</label>
+                                <input class="text" type="tel" name="phone" placeholder="Requerido*"
+                                    value="+123 456 77 8899">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="side-info card">
+                    <div class="side-header">
+                        <span class="text">Eventos / Actividades</span>
+                        <mat-icon fontSet="material-icons-round" (click)="eventsExpanded = !eventsExpanded">
+                            {{eventsExpanded ? 'expand_less' : 'expand_more'}}
+                        </mat-icon>
+                    </div>
+                    <div class="side-content" *ngIf="eventsExpanded">
+                        <h4 class="medium">Próxima</h4>
+                        <div class="next-activity">
+                            <div>
+                                <h4 class="medium">Llamada inicial</h4>
+                                <p class="text">26 de Noviembre</p>
+                                <span class="text">18:30 h</span>
+                            </div>
+                            <button class="terciary-button">
+                                Iniciar
+                            </button>
+                        </div>
+                        <div class="last-activities">
+                            <h4 class="medium">Últimas</h4>
+                            <ul class="activities-list">
+                                <li class="activity">
+                                    <h4 class="activity-title">Cuestionario inicial respondido</h4>
+                                    <span class="header-subtitle text">26 de Noviembre, 18:30 h</span>
+                                </li>
+                                <li class="activity">
+                                    <h4 class="activity-title">Última: Envío de cuestionario inicial</h4>
+                                    <span class="header-subtitle text">26 de Noviembre, 18:30 h</span>
+                                </li>
+                            </ul>
+                            <div class="more">
+                                <mat-icon setFont="material-icons-round">add</mat-icon>
+                                <span class="caption">ver historial completo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-info card">
+                    <div class="side-header">
+                        <span class="text">Documentos</span>
+                        <mat-icon fontSet="material-icons-round" (click)="docsExpanded = !docsExpanded">
+                            {{docsExpanded ? 'expand_less' : 'expand_more'}}
+                        </mat-icon>
+                    </div>
+                    <div class="side-content" *ngIf="docsExpanded">
+                        <div class="doc">
+                            <h4 class="medium">PDF documento 1</h4>
+                            <p class="text descriptive">Cargado el 26 de Noviembre</p>
+                            <p class="text descriptive">127 kb</p>
+                        </div>
+                        <div class="doc">
+                            <h4 class="medium">PDF documento 2</h4>
+                            <p class="text descriptive">Cargado el 26 de Noviembre</p>
+                            <p class="text descriptive">128 kb</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <div class="side-info card" *ngIf="activityOpened" [ngClass]="{'extra-margin': !showHeader}">
+                <app-initial-call></app-initial-call>
+            </div>
+        </section>
+    </div>
+</div>

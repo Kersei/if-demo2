@@ -1,0 +1,22 @@
+.checkbox-input {
+    height: 24px;
+    width: 24px;
+
+    mat-icon {
+        height: auto;
+        width: auto;
+        cursor: pointer;
+    }
+}
+
+.form-checkbox> :host>.checkbox-input {
+    margin-right: 12px;
+
+    mat-icon {
+        color: #797D90;
+    }
+}
+
+.disabled {
+    color: #797D90;
+}

@@ -1,0 +1,20 @@
+<div class="content">
+    <div class="fixed-container">
+        <div class="header">
+            <h2>Membresías</h2>
+            <button class="main-button" (click)="openNewMembership()">
+                <mat-icon fontSet="material-icons-round" class="icon_before">add</mat-icon>
+                <span>Nueva Membresía
+                </span>
+            </button>
+        </div>
+        <hr class="membership-separator">
+    </div>
+    <div class="memberships">
+        <app-activity-item type="membership" [options]="options" (optionSelected)="handleOptions($event)"></app-activity-item>
+        <app-activity-item type="membership" [options]="options" (optionSelected)="handleOptions($event)"></app-activity-item>
+        <app-activity-item type="membership" [options]="options" (optionSelected)="handleOptions($event)"></app-activity-item>
+        <app-activity-item type="membership" [options]="options" (optionSelected)="handleOptions($event)"></app-activity-item>
+        <app-activity-item type="membership" [hidden]="true" [options]="options" (optionSelected)="handleOptions($event)"></app-activity-item>
+    </div>
+</div>

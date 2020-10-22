@@ -1,0 +1,40 @@
+<div class="content">
+    <div class="fixed-container">
+        <div class="header">
+            <h2>Mis Actividades</h2>
+            <button class="main-button" (click)="openNewActivity()">
+                <mat-icon fontSet="material-icons-round" class="icon_before">add</mat-icon>
+                <span>Agregar Actividad
+                </span>
+            </button>
+        </div>
+        <hr class="activity-separator">
+        <div class="daybar">
+            <h3>Hoy</h3>
+            <app-day-picker></app-day-picker>
+        </div>
+    </div>
+    <table class="activities">
+        <app-activity-item type="call"></app-activity-item>
+        <app-activity-item type="call"></app-activity-item>
+        <app-activity-item type="call"></app-activity-item>
+        <app-activity-item type="call"></app-activity-item>
+        <app-activity-item type="call"></app-activity-item>
+    </table>
+    <hr class="activity-separator">
+    <h3>Tareas a realizar esta semana</h3>
+    <table class="activities">
+        <app-activity-item type="make"></app-activity-item>
+        <app-activity-item type="send"></app-activity-item>
+        <app-activity-item type="load"></app-activity-item>
+    </table>
+    <hr class="activity-separator">
+    <h3>Mas temprano hoy</h3>
+    <table class="activities">
+        <app-activity-item type="call" done="true"></app-activity-item>
+        <app-activity-item type="call" done="true"></app-activity-item>
+        <app-activity-item type="call" done="true"></app-activity-item>
+        <app-activity-item type="call" done="true"></app-activity-item>
+        <app-activity-item type="call" done="true"></app-activity-item>
+    </table>
+</div>

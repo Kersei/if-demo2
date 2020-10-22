@@ -1,0 +1,196 @@
+<div class="activity-header">
+    <span class="text descriptive">26 de Noviembre, 18:30 h (15
+        minutos)</span>
+    <h3>Llamada de seguimiento</h3>
+</div>
+<div class="activity-content">
+    <div class="previous-notes">
+        <span class="text">Notas adicionales de la llamada anterior</span>
+        <h4 class="medium">La noté muy preocupada por comer carne y ansiosa por saber cuánto tiempo más duraría el
+            tratamiento hasta ver resultados. La noté muy distraida por temas de trabajo y problemas en la casa.</h4>
+    </div>
+    <hr class="activity-separator">
+    <div class="photos">
+        <h3>Fotografías</h3>
+        <button class="terciary-button">
+            <mat-icon fontSet="material-icons-round" class="icon_before">backup</mat-icon>
+            Subir
+        </button>
+    </div>
+    <hr class="activity-separator">
+    <div class="add-margin">
+        <h3>Peso</h3>
+        <div class="measure">
+            <span class="text">Última medición: 100kg</span>
+            <div class="form-control">
+                <input type="text" placeholder="Actual medición">
+            </div>
+        </div>
+    </div>
+    <hr class="activity-separator">
+    <div class="add-margin">
+        <h3>Grasa Corporal</h3>
+        <div class="measure">
+            <span class="text">Última medición: 10%</span>
+            <div class="form-control">
+                <input type="text" placeholder="Actual medición">
+            </div>
+        </div>
+    </div>
+    <hr class="activity-separator">
+    <div class="add-margin">
+        <h3>Cintura</h3>
+        <div class="measure">
+            <span class="text">Última medición: 100cm</span>
+            <div class="form-control">
+                <input type="text" placeholder="Actual medición">
+            </div>
+        </div>
+    </div>
+    <hr class="activity-separator">
+    <div class="add-margin">
+        <h3>Pecho</h3>
+        <div class="measure">
+            <span class="text">Última medición: 10cm</span>
+            <div class="form-control">
+                <input type="text" placeholder="Actual medición">
+            </div>
+        </div>
+    </div>
+    <hr class="activity-separator">
+    <div class="add-margin">
+        <h3>Brazos</h3>
+        <div class="measure">
+            <span class="text">Última medición: 10cm</span>
+            <div class="form-control">
+                <input type="text" placeholder="Actual medición">
+            </div>
+        </div>
+    </div>
+    <hr class="activity-separator">
+    <div class="add-margin">
+        <h3>Cadera</h3>
+        <div class="measure">
+            <span class="text">Última medición: 100cm</span>
+            <div class="form-control">
+                <input type="text" placeholder="Actual medición">
+            </div>
+        </div>
+    </div>
+    <hr class="activity-separator">
+    <div class="add-margin">
+        <h3>Piernas</h3>
+        <div class="measure">
+            <span class="text">Última medición: 10cm</span>
+            <div class="form-control">
+                <input type="text" placeholder="Actual medición">
+            </div>
+        </div>
+    </div>
+    <hr class="activity-separator">
+    <p class="text activity-subheader">¿Qué tan lista te sientes para seguir con esta transformación?</p>
+    <div style="width: 50%;">
+        <app-button-scale [max]="5"></app-button-scale>
+    </div>
+    <hr class="activity-separator">
+    <p class="text activity-subheader">¿Qué tan dispuesta estás para dar lo mejor de ti?</p>
+    <div style="width: 50%;">
+        <app-button-scale [max]="5"></app-button-scale>
+    </div>
+    <hr class="activity-separator">
+    <p class="text activity-subheader">¿Qué tan amigables son tus circunstancias de vida actuales?</p>
+    <div style="width: 50%;">
+        <app-button-scale [max]="5"></app-button-scale>
+    </div>
+    <hr class="activity-separator">
+    <div class="add-margin">
+        <p class="text">¿A qué hora tienes más ansiedad por comer?</p>
+        <div class="form-control">
+            <label class="medium">Última respuesta: Después de la cena</label>
+            <input type="text">
+        </div>
+    </div>
+    <hr class="activity-separator">
+    <div class="add-margin">
+        <p class="text">¿Qué tipo de antojos tienes?</p>
+        <div class="form-control">
+            <label class="medium">Última respuesta: Algo dulce</label>
+            <input type="text">
+        </div>
+    </div>
+    <hr class="activity-separator">
+    <h3 class="activity-subheader">Entrenamiento</h3>
+    <div class="training-question">
+        <span class="text">¿Dónde entrenas?</span>
+        <div class="checkgroup">
+            <div class="form-checkbox">
+                <label class="text">Casa</label>
+                <app-custom-checkbox></app-custom-checkbox>
+            </div>
+            <div class="form-checkbox">
+                <label class="text">Parque</label>
+                <app-custom-checkbox></app-custom-checkbox>
+            </div>
+            <div class="form-checkbox">
+                <label class="text">Gym</label>
+                <app-custom-checkbox></app-custom-checkbox>
+            </div>
+        </div>
+    </div>
+    <mat-grid-list cols="2" rowHeight="84px" gutterSize="32px">
+        <mat-grid-tile colspan="2">
+            <div class="form-control">
+                <label class="text">Equipo</label>
+                <input type="text">
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="form-control">
+                <label class="text">Horas de entrenamiento</label>
+                <input type="text">
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="form-control">
+                <label class="text">Días / Duración</label>
+                <input type="text">
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <hr class="activity-separator">
+    <h3 class="activity-subheader">Seguimiento</h3>
+    <div class="form-control">
+        <label class="text">¿Cómo te fue?</label>
+        <input type="text">
+    </div>
+    <div class="form-control">
+        <label class="text">Detalles de dieta</label>
+        <input type="text">
+    </div>
+    <div class="form-control">
+        <label class="text">Detalles de rutina</label>
+        <input type="text">
+    </div>
+    <div class="form-control">
+        <label class="text">Acuerdo</label>
+        <p class="text medium">Último acuerdo: Trabajar la ansiedad</p>
+        <input type="text">
+    </div>
+    <hr class="activity-separator">
+    <p class="text activity-subheader">¿Qué tan segura estás de poder llevar a cabo un plan con estas
+        características?</p>
+    <app-button-scale></app-button-scale>
+    <div class="form-control after-dots">
+        <label class="text">Notas</label>
+        <textarea></textarea>
+    </div>
+    <div class="form-checkbox">
+        <app-custom-checkbox></app-custom-checkbox>
+        <label class="text">Recordar en la próxima llamada</label>
+    </div>
+</div>
+<div class="activity-footer">
+    <button class="terciary-button">
+        Terminar Actividad
+    </button>
+</div>

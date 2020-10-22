@@ -1,0 +1,52 @@
+<div class="content no-padding">
+    <div class="fixed-container">
+        <div class="header">
+            <h2>Mis Clientes</h2>
+            <button class="main-button" (click)="openNewClient()">
+                <mat-icon fontSet="material-icons-round" class="icon_before">add</mat-icon>
+                <span>Agregar Cliente
+                </span>
+            </button>
+        </div>
+        <div class="tabs">
+            <a class="tab" [ngClass]="{'active': currentTab == 1}" (click)="currentTab = 1">Activos</a>
+            <a class="tab" [ngClass]="{'active': currentTab == 2}" (click)="currentTab = 2">Invitados <span
+                    class="reminder" [ngClass]="{'reminder-active': currentTab == 2}">2</span></a>
+            <a class="tab" [ngClass]="{'active': currentTab == 3}" (click)="currentTab = 3">Vencidos</a>
+            <a class="tab" [ngClass]="{'active': currentTab == 4}" (click)="currentTab = 4">Inactivos</a>
+        </div>
+        <div class="filters">
+            <div class="search_filter">
+                <app-search-bar></app-search-bar>
+                <app-custom-select [type]="'select'"></app-custom-select>
+            </div>
+            <div class="order">
+                <app-custom-select [type]="'order'"></app-custom-select>
+            </div>
+        </div>
+    </div>
+    <div class="clients">
+        <ng-container [ngSwitch]="currentTab">
+            <ng-container *ngSwitchCase="1">
+                <app-client-card type="active"></app-client-card>
+                <app-client-card type="active"></app-client-card>
+                <app-client-card type="active"></app-client-card>
+            </ng-container>
+            <ng-container *ngSwitchCase="2">
+                <app-client-card type="invited"></app-client-card>
+                <app-client-card type="invited"></app-client-card>
+                <app-client-card type="invited"></app-client-card>
+            </ng-container>
+            <ng-container *ngSwitchCase="3">
+                <app-client-card type="expired"></app-client-card>
+                <app-client-card type="expired"></app-client-card>
+                <app-client-card type="expired"></app-client-card>
+            </ng-container>
+            <ng-container *ngSwitchCase="4">
+                <app-client-card type="inactive"></app-client-card>
+                <app-client-card type="inactive"></app-client-card>
+                <app-client-card type="inactive"></app-client-card>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div mat-dialog-content class="modal-content">
+    <div class="modal-header">
+        <h3>{{title}}</h3>
+        <button mat-icon-button [mat-dialog-close]="true">
+            <mat-icon fontSet="material-icons-round" class="close-icon">close</mat-icon>
+        </button>
+    </div>
+    <form name="newActivity">
+        <mat-grid-list cols="2" rowHeight="84px" gutterSize="32px">
+            <mat-grid-tile>
+                <div class="form-control">
+                    <label class="text">Día de la semana</label>
+                    <app-custom-select type="select" [options]="options"></app-custom-select>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="form-control">
+                    <label class="text">Horario</label>
+                    <input class="text" type="text" name="price">
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</div>
+<div mat-dialog-actions class="modal-footer right">
+    <button type="submit" mat-button form="newActivity" class="main-button">{{buttonText}}</button>
+</div>

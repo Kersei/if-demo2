@@ -1,0 +1,128 @@
+.activity-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-radius: 8px;
+    height: 56px;
+    margin-bottom: 24px;
+}
+
+.activity-container:hover {
+    box-shadow: 0px 0px 1px rgba(41, 47, 77, 0.16), 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activity-notch {
+    border-radius: 8px 0 0 8px;
+    height: 100%;
+    width: 8px;
+}
+
+.call {
+    background: #5678F2;
+}
+
+.make {
+    background: #FC85AD;
+}
+
+.send {
+    background: #70D2C7;
+}
+
+.load {
+    background: #FFE387;
+}
+
+.membership {
+    background: #F14156;
+}
+
+.done.call {
+    background: #A0ACF0;
+}
+
+.done.make {
+    background: #FDB3CC;
+}
+
+.done.send {
+    background: #A6E3DC;
+}
+
+.done.load {
+    background: #FFEDB4;
+}
+
+.done {
+    color: #797D90;
+}
+
+.hidden {
+    .membership {
+        background: #E4E6EF;
+    }
+
+    .price,
+    .visibility,
+    .client-amount,
+    .activity-name {
+        color: #797D90;
+    }
+}
+
+.hidden:hover {
+    .membership {
+        background: #797D90;
+    }
+
+    .price,
+    .visibility,
+    .client-amount,
+    .activity-name {
+        color: #292F4D;
+    }
+}
+
+.activity-time {
+    margin: 0 16px;
+    padding: 8px 16px;
+    background: #F6F8FF;
+    border-radius: 4px;
+}
+
+.activity-check {
+    height: 24px;
+    width: 24px;
+    margin: 0 16px;
+}
+
+.client-name,
+.visibility {
+    margin: auto;
+}
+
+.dots {
+    margin: 0 16px;
+}
+
+.activity-options {
+    display: flex;
+    align-items: center;
+}
+
+[hidden] {
+    opacity: 0;
+}
+
+.add-margin {
+    margin-left: 24px;
+}
+
+.price {
+    margin-left: 106px;
+}
+
+.client-amount {
+    margin-right: auto;
+}

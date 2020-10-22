@@ -1,0 +1,16 @@
+<div class="session-form-container">
+    <form [formGroup]="loginForm" class="session-form" (ngSubmit)="login()">
+        <img src="/assets/img/Logotype B.svg" class="logo">
+        <h3 class="form-title">Iniciar Sesión</h3>
+        <div class="form-control">
+            <label class="text">Correo electrónico</label>
+            <input type="email" formControlName="email">
+        </div>
+        <div class="form-control">
+            <label class="text">Contraseña</label>
+            <input type="password" formControlName="password">
+        </div>
+        <button class="main-button">Entrar</button>
+        <span class="lost-password text" routerLink="/recuperar">¿Perdiste tu contraseña?</span>
+    </form>
+</div>

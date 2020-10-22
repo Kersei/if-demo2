@@ -1,0 +1,104 @@
+<div class="content">
+    <div class="fixed-container">
+        <h2>Coach Anastasia Moreno</h2>
+    </div>
+    <div class="data-box">
+        <div class="data-header">
+            <h2>Mis datos</h2>
+            <button class="terciary-button" (click)="enableEdit()" *ngIf="!editMode">
+                <mat-icon fontSet="material-icons-round" class="icon_before">edit</mat-icon>
+                Editar
+            </button>
+        </div>
+        <div class="form-container">
+            <form class="form" [formGroup]="dataForm" name="dataForm" (ngSubmit)="saveData()">
+                <mat-grid-list cols="2" rowHeight="84px" gutterSize="32px">
+                    <mat-grid-tile>
+                        <div class="form-control">
+                            <label class="text">Nombre</label>
+                            <input class="text" type="text" formControlName="name" id="name">
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <div class="form-control">
+                            <label class="text">Apellido</label>
+                            <input class="text" type="text" formControlName="lastName">
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <div class="form-control">
+                            <label class="text">Correo electrónico</label>
+                            <input class="text" type="email" formControlName="email">
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <div class="form-control">
+                            <label class="text">Teléfono</label>
+                            <input class="text" type="tel" formControlName="phone">
+                        </div>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </form>
+            <div class="picture-container" [formGroup]="dataForm">
+                <img class="profile-picture" src="/assets/img/profile.jpg">
+                <input type="file" formControlName="picture" class="image-file" id="file">
+                <label for="file" class="text edit-picture caption">editar</label>
+            </div>
+        </div>
+        <div class="form-buttons" *ngIf="editMode">
+            <button class="terciary-button" type="submit" form="dataForm">
+                Guardar
+            </button>
+            <button class="terciary-button" type="button" (click)="disableEdit()">
+                Cancelar
+            </button>
+        </div>
+    </div>
+    <div class="data-box">
+        <div class="data-header">
+            <h2>Disponibilidad</h2>
+            <button class="terciary-button" (click)="openNewAvailability()">
+                <mat-icon fontSet="material-icons-round" class="icon_before">add</mat-icon>
+                Agregar
+            </button>
+        </div>
+        <div class="availability-container">
+            <div class="availability">
+                <h4 class="medium day">Lunes</h4>
+                <span class="text timeframe">De 9:00 a 18:00 hs</span>
+                <div class="actions">
+                    <div class="action-button" (click)="openNewAvailability(true)">
+                        <mat-icon setFont="material-icons-round">edit</mat-icon>
+                    </div>
+                    <div class="action-button">
+                        <mat-icon setFont="material-icons-round">delete</mat-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="availability">
+                <h4 class="medium day">Miércoles</h4>
+                <span class="text timeframe">De 9:00 a 18:00 hs</span>
+                <div class="actions">
+                    <div class="action-button" (click)="openNewAvailability(true)">
+                        <mat-icon setFont="material-icons-round">edit</mat-icon>
+                    </div>
+                    <div class="action-button">
+                        <mat-icon setFont="material-icons-round">delete</mat-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="availability">
+                <h4 class="medium day">Sábado</h4>
+                <span class="text timeframe">De 9:00 a 18:00 hs</span>
+                <div class="actions">
+                    <div class="action-button" (click)="openNewAvailability(true)">
+                        <mat-icon setFont="material-icons-round">edit</mat-icon>
+                    </div>
+                    <div class="action-button">
+                        <mat-icon setFont="material-icons-round">delete</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

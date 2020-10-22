@@ -1,0 +1,89 @@
+<div mat-dialog-content class="modal-content">
+    <div class="modal-header">
+        <h3>Agregar nueva actividad</h3>
+        <button mat-icon-button [mat-dialog-close]="true">
+            <mat-icon fontSet="material-icons-round" class="close-icon">close</mat-icon>
+        </button>
+    </div>
+    <form name="newActivity">
+        <mat-grid-list cols="4" rowHeight="84px" gutterSize="32px">
+            <mat-grid-tile colspan="2">
+                <div class="form-control">
+                    <label class="text">Tipo / Categoría*</label>
+                    <app-custom-select type="select" [options]="options" (selectionChanged)="selection($event)"></app-custom-select>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+                <div class="form-control">
+                    <label class="text">Cliente*</label>
+                    <input class="text" type="text" name="client" placeholder="Requerido*">
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="4">
+                <div class="form-control">
+                    <label class="text">Descripción</label>
+                    <input class="text" type="text" name="description">
+                </div>
+            </mat-grid-tile>
+            <ng-container [ngSwitch]="selected">
+                <ng-container *ngSwitchCase="'call'">
+                    <mat-grid-tile colspan="2">
+                        <div class="form-control">
+                            <label class="text">Fecha inicial</label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <div class="form-control">
+                            <label class="text">Hora*</label>
+                            <input class="text" type="text">
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <div class="form-control">
+                            <label class="text">Duración*</label>
+                            <input class="text" type="text">
+                        </div>
+                    </mat-grid-tile>
+                </ng-container>
+                <ng-container *ngSwitchCase="'task'">
+                    <mat-grid-tile colspan="2">
+                        <div class="form-control">
+                            <label class="text">Fecha límite*</label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="2">
+                        <div class="form-checkbox">
+                            <app-custom-checkbox></app-custom-checkbox>
+                            <label class="text">Recordar la semana anterior</label>
+                        </div>
+                    </mat-grid-tile>
+                </ng-container>
+                <ng-container *ngSwitchCase="'reminder'">
+                    <mat-grid-tile colspan="2">
+                        <div class="form-control">
+                            <label class="text">Fecha límite*</label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="2">
+                        <div class="form-control">
+                            <label class="text">Hora*</label>
+                            <input class="text" type="text">
+                        </div>
+                    </mat-grid-tile>
+                </ng-container>
+            </ng-container>
+        </mat-grid-list>
+    </form>
+</div>
+<div mat-dialog-actions class="modal-footer right">
+    <button type="submit" mat-button form="newActivity" class="main-button">Crear Actividad</button>
+</div>
